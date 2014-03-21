@@ -38,9 +38,11 @@ public class DiningPhilosophers
 	 * Main system starts up right here
 	 */
 	public static void main(String[] argv)
+	
 	{
 		try
 		{
+			
 			/*
 			 * TODO:
 			 * Should be settable from the command line
@@ -48,6 +50,12 @@ public class DiningPhilosophers
 			 */
 			int iPhilosophers = DEFAULT_NUMBER_OF_PHILOSOPHERS;
 
+			System.out.println
+			(
+				iPhilosophers +
+				" philosopher(s) came in for a dinner."
+			);
+			
 			// Make the monitor aware of how many philosophers there are
 			soMonitor = new Monitor(iPhilosophers);
 
@@ -61,11 +69,7 @@ public class DiningPhilosophers
 				aoPhilosophers[j].start();
 			}
 
-			System.out.println
-			(
-				iPhilosophers +
-				" philosopher(s) came in for a dinner."
-			);
+
 
 			// Main waits for all its children to die...
 			// I mean, philosophers to finish their dinner.
