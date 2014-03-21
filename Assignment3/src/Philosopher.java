@@ -97,9 +97,7 @@ public class Philosopher extends BaseThread
 		for(int i = 0; i < DiningPhilosophers.DINING_STEPS; i++)
 		{
 			DiningPhilosophers.soMonitor.pickUp(getTID());
-
 			eat();
-
 			DiningPhilosophers.soMonitor.putDown(getTID());
 
 			think();
@@ -111,9 +109,9 @@ public class Philosopher extends BaseThread
 			 */
 			if(random.nextBoolean())
 			{
-				// Some monitor ops down here...
+				DiningPhilosophers.soMonitor.requestTalk();
 				talk();
-				// ...
+				DiningPhilosophers.soMonitor.endTalk();
 			}
 
 			yield();
